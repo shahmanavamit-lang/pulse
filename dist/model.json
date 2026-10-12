@@ -1,0 +1,215 @@
+{
+  "version": "pulse-cleveland-lr-1.0.0",
+  "algorithm": "L2-regularized logistic regression",
+  "threshold": 0.5,
+  "numeric": [
+    "age",
+    "trestbps",
+    "chol",
+    "thalach",
+    "oldpeak"
+  ],
+  "categorical": [
+    "sex",
+    "cp",
+    "fbs",
+    "restecg",
+    "exang",
+    "slope",
+    "ca",
+    "thal"
+  ],
+  "categories": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2,
+      3
+    ],
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      3,
+      6,
+      7
+    ]
+  ],
+  "means": [
+    54.77215189873418,
+    132.27004219409284,
+    249.40928270042195,
+    149.8438818565401,
+    1.0616033755274261
+  ],
+  "scales": [
+    9.013280450715815,
+    17.878011067930768,
+    53.05006391061259,
+    22.350225706927414,
+    1.17710327190575
+  ],
+  "weights": [
+    -0.023413343238670944,
+    0.4073564484219965,
+    0.2584967797697444,
+    -0.17575419265025885,
+    0.5435472541298781,
+    -0.53369978981841,
+    0.5179363016513107,
+    -0.5181740695373264,
+    0.16748396471262106,
+    -0.8487444617353207,
+    1.1836710783929265,
+    0.1607729785483722,
+    -0.17653646671547163,
+    -0.272486949348743,
+    0.06635266208236479,
+    0.1903707990992788,
+    -0.22390075863106135,
+    0.2081372704639621,
+    -0.595233733985641,
+    0.36073431472274137,
+    0.2187359310958005,
+    -1.3024346801455498,
+    0.5692526962345957,
+    0.8114928493180354,
+    -0.09407435357418066,
+    -0.6243061638680308,
+    -0.32781200302143765,
+    0.9363546787223691
+  ],
+  "intercept": -0.039967812799978894,
+  "encodedTrainingMean": [
+    -2.9793326736776354e-16,
+    -5.958665347355271e-16,
+    -2.506199654744552e-16,
+    -3.7007434154171886e-16,
+    7.86993536443149e-17,
+    0.32489451476793246,
+    0.6751054852320675,
+    0.0759493670886076,
+    0.1518987341772152,
+    0.28270042194092826,
+    0.48945147679324896,
+    0.8312236286919831,
+    0.16877637130801687,
+    0.5021097046413502,
+    0.012658227848101266,
+    0.48523206751054854,
+    0.6540084388185654,
+    0.3459915611814346,
+    0.4810126582278481,
+    0.45147679324894513,
+    0.06751054852320675,
+    0.5738396624472574,
+    0.2320675105485232,
+    0.1350210970464135,
+    0.05907172995780591,
+    0.5316455696202531,
+    0.06751054852320675,
+    0.4008438818565401
+  ],
+  "ranges": {
+    "age": [
+      29.0,
+      77.0
+    ],
+    "trestbps": [
+      94.0,
+      200.0
+    ],
+    "chol": [
+      126.0,
+      564.0
+    ],
+    "thalach": [
+      71.0,
+      202.0
+    ],
+    "oldpeak": [
+      0.0,
+      6.2
+    ]
+  },
+  "source": {
+    "name": "UCI Heart Disease \u2014 Cleveland",
+    "url": "https://archive.ics.uci.edu/dataset/45/heart+disease",
+    "doi": "https://doi.org/10.24432/C52P4X",
+    "citation": "Janosi, A., Steinbrunn, W., Pfisterer, M., & Detrano, R. (1989). Heart Disease [Dataset]. UCI Machine Learning Repository.",
+    "license": "CC BY 4.0",
+    "sha256": "a74b7efa387bc9d108d7d0115d831fe9b414b29ae7124f331b622b4efa0427c8"
+  },
+  "training": {
+    "sourceRows": 303,
+    "completeRows": 297,
+    "excludedRows": 6,
+    "trainRows": 237,
+    "testRows": 60,
+    "randomSeed": 42,
+    "split": "80/20 stratified",
+    "preprocessing": "Training-only standardization of 5 numeric features; one-hot encoding of 8 categorical features. Complete cases only.",
+    "hyperparameters": {
+      "C": 1.0,
+      "solver": "lbfgs",
+      "max_iter": 2000
+    },
+    "sklearnVersion": "1.9.1",
+    "pythonVersion": "3.12.14",
+    "trainPositive": 109,
+    "trainFemale": 77,
+    "trainMale": 160
+  },
+  "metrics": {
+    "accuracy": 0.8166666666666667,
+    "accuracyCI95": [
+      0.7008000677353371,
+      0.8944231096286387
+    ],
+    "rocAuc": 0.9408482142857143,
+    "sensitivity": 0.7142857142857143,
+    "specificity": 0.90625,
+    "brier": 0.10461613272933011,
+    "majorityBaselineAccuracy": 0.5333333333333333,
+    "confusion": {
+      "trueNegative": 29,
+      "falsePositive": 3,
+      "falseNegative": 8,
+      "truePositive": 20
+    }
+  },
+  "target": "Dataset num > 0 (disease class) versus num = 0 (no-disease class). Coronary angiographic disease status; not all heart disease and not future risk.",
+  "limitations": [
+    "Small, historical Cleveland clinical cohort; not representative of general screening populations.",
+    "Single internal random holdout only; no prospective or external clinical validation.",
+    "Scores have not been externally calibrated and are not reliable personal disease probabilities.",
+    "Sex is binary in the source data; subgroup performance and fairness have not been established.",
+    "Requires clinical test results; do not guess or substitute missing measurements.",
+    "False negatives and false positives occur. Do not use to diagnose, rule out disease, change medication, or delay care."
+  ]
+}
